@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Mobile Script IDE</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Mobile Script IDE</div>
+
+    <div class="controls">
+      <select id="lang">
+        <option value="js" selected>JavaScript</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+      </select>
+
+      <input id="filename" value="main.js" />
+      <button id="saveBtn">Save</button>
+      <button id="loadBtn">Load</button>
+      <button id="runBtn" class="primary">Run</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="pane">
+      <div class="pane-title">Editor</div>
+      <div id="editor" class="editor"></div>
+    </section>
+
+    <section class="pane">
+      <div class="pane-title">Output</div>
+      <div class="output">
+        <div class="output-toolbar">
+          <button id="clearBtn">Clear</button>
+          <span id="status" class="status"></span>
+        </div>
+        <pre id="log" class="log"></pre>
+        <iframe id="runner" class="runner" sandbox="allow-scripts"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
